@@ -17,6 +17,10 @@
   color: #61dafb;
 }
 
+.MuiToolbar-root {
+  background-color: green;
+}
+
 .nav-list {
   list-style: none;
   display: flex;
@@ -30,4 +34,13 @@ a {
 
 .nav-list-item {
   margin: auto 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  margin: 30px;
+  border: 2px solid lightgray;
+  border-radius: 8px;
 }

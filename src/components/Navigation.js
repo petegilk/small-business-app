@@ -4,8 +4,9 @@ import MenuIcon from '@material-ui/icons/Menu'
 import { Link } from 'react-router-dom'
 
 const Navigation = () => {
+
   return (
-    <AppBar position="relative">
+    <AppBar position="relative" color="secondary">
             <Toolbar>
                 <IconButton color="inherit">
                     <MenuIcon />
@@ -16,14 +17,21 @@ const Navigation = () => {
                 <ul className="nav-list">
 
                     <li className="nav-list-item">
-                        <Link to="/Home">Home</Link>
+                        <Link to="/">Listings</Link>
                     </li>
                     <li className="nav-list-item">
-                        <Link to="/About">About</Link>
+                        <Link to="/about">About</Link>
                     </li>
                     <li className="nav-list-item">
-                        <Link to="">Log in</Link>
+                        <Link to="/login">Login</Link>
                     </li>
+                    {/* <li className="nav-list-item"
+                        onClick={() => {
+                            document.cookie = "loggedIn="
+                            window.location.replace("/login")
+                        }}>
+                        Logout
+                    </li> */}
 
                 </ul>
             </Toolbar>
