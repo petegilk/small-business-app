@@ -18,7 +18,7 @@
 }
 
 .MuiToolbar-root {
-  background-color: green;
+  background-color: darkgreen;
 }
 
 .nav-list {
@@ -43,4 +43,8 @@ a {
   margin: 30px;
   border: 2px solid lightgray;
   border-radius: 8px;
+}
+
+.listing-name {
+  color: black;
 }
