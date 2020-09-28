@@ -23,7 +23,7 @@ const Listings = (props) => {
           {props.listings.map((item, i) => {
             return (
               <TableRow key={i}>
-                <TableCell><Link to={`//${i}`} className="listing-name">{item.name}</Link></TableCell>
+                <TableCell><Link to={`/listing/${i}`} className="listing-name">{item.name}</Link></TableCell>
                 <TableCell>{item.description}</TableCell>
                 <TableCell>{item.hours}</TableCell>
                 <TableCell>{item.address}</TableCell>
