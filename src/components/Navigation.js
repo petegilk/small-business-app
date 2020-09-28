@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import { Link } from 'react-router-dom'
+import cookie from 'cookie'
+
+const cookies = cookie.parse(document.cookie)
 
 const Navigation = () => {
 
@@ -19,12 +22,22 @@ const Navigation = () => {
                     <li className="nav-list-item">
                         <Link to="/">Listings</Link>
                     </li>
-                    <li className="nav-list-item">
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li className="nav-list-item">
-                        <Link to="/login">Login</Link>
-                    </li>
+                    {
+                        cookies['loggedIn'] ?
+                        <li className="nav-list-item">
+                        <Link to="/addlisting">Add</Link></li>
+                        : null
+                    }
+                    {
+                        cookies['loggedIn'] ?
+                        <li className="nav-list-item">
+                        <Link to="/login" onClick={()=>{
+                            document.cookie = "loggedIn= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+                        }} >Logout</Link></li>
+                        :
+                        <li className="nav-list-item">
+                        <Link to="/login">Login</Link></li>
+                    }
                     {/* <li className="nav-list-item"
                         onClick={() => {
                             document.cookie = "loggedIn="

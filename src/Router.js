@@ -4,7 +4,7 @@ import cookie from 'cookie'
 import Login from './components/Login'
 import Listings from './containers/Listings'
 import Details from './containers/Details'
-import AddListing from './components/AddListing'
+import AddListing from './containers/AddListing'
 
 const checkAuth = () => {
   const cookies = cookie.parse(document.cookie)
@@ -28,6 +28,7 @@ const Router = () => {
       <Route path='/login' component={Login} />
       <Route exact path='/' component={Listings} />
       <Route path='/listing/:id' component={Details} />
+      <ProtectedRoute path='/addlisting' component={AddListing} />
     </Switch>
   )
 }
